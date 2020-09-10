@@ -105,7 +105,7 @@ func WASessionInit(jid string, versionClientMajor int, versionClientMinor int, v
 		if err != nil {
 			return err
 		}
-		conn.SetClientName("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:80.0) Gecko/20100101 Firefox/80.0", "Mozilla/5.0", "80.0")
+		conn.SetClientName("Mac OS", "My Browser", "1.0")
 
 		info, err := WASyncVersion(conn, versionClientMajor, versionClientMinor, versionClientBuild)
 		if err != nil {
