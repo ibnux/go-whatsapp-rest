@@ -1,3 +1,4 @@
 share/store/*.gob
 vendor
+dist/**
 !*.gitkeep

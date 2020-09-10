@@ -48,6 +48,7 @@ func (s *Server) Start() {
 
 	// Start The Server
 	LogPrintln(LogLevelInfo, "http-server", "server master started at PID "+strconv.Itoa(os.Getpid()))
+	LogPrintln(LogLevelInfo, "http-server", "RouterBasePath "+Config.GetString("ROUTER_BASE_PATH"))
 	go func() {
 		LogPrintln(LogLevelInfo, "http-server", "server worker started at PID "+strconv.Itoa(os.Getpid())+" listening on "+net.JoinHostPort(serverCfg.IP, serverCfg.Port))
 		s.srv.ListenAndServe()

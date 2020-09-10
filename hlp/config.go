@@ -16,7 +16,7 @@ func init() {
 	// Set Configuration File Value
 	configEnv := strings.ToLower(os.Getenv("CONFIG_ENV"))
 	if len(configEnv) == 0 {
-		configEnv = "development"
+		configEnv = "production"
 	}
 
 	// Set Configuration Path Value
@@ -112,7 +112,7 @@ func configLoadValues() {
 	Config.SetDefault("CRYPT_PUBLIC_KEY_FILE", "./share/public.key")
 
 	// JWT Expiration Time Value
-	Config.SetDefault("JWT_EXPIRATION_TIME_HOURS", 24)
+	Config.SetDefault("JWT_EXPIRATION_TIME_HOURS", 8760)
 
 	// Authentication Basic Password Value
 	Config.SetDefault("AUTH_BASIC_PASSWORD", "83e4060e-78e1-4fe5-9977-aeeccd46a2b8")

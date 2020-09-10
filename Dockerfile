@@ -19,7 +19,7 @@ ARG SERVICE_NAME="go-whatsapp-rest"
 ENV PATH $PATH:/opt/${SERVICE_NAME}
 
 ENV CONFIG_ENV="production" \
-    PRODUCTION_ROUTER_BASE_PATH="/api/v1/whatsapp"
+    PRODUCTION_ROUTER_BASE_PATH="/wa"
 
 WORKDIR /opt/${SERVICE_NAME}
 

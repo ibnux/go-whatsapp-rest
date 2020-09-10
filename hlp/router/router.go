@@ -1,11 +1,9 @@
 package router
 
 import (
-	"net/http"
-
-	"github.com/go-chi/chi"
-
 	"github.com/dimaskiddo/go-whatsapp-rest/hlp"
+	"github.com/go-chi/chi"
+	"net/http"
 )
 
 // RouterBasePath Variable
