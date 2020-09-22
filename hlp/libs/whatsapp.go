@@ -346,7 +346,7 @@ func WAMessageText(jid string, jidDest string, msgText string, msgQuotedID strin
 		case "sending message timed out":
 			return id, nil
 		case "could not send proto: failed to write message: error writing to websocket: websocket: close sent":
-			delete(wac, jid)
+			//delete(wac, jid)
 			return "", errors.New("connection is invalid")
 		default:
 			return "", err
