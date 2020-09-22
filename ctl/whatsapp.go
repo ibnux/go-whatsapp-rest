@@ -77,7 +77,7 @@ func WhatsAppLogin(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if len(reqTimeout) == 0 {
-		reqBody.Timeout = 5
+		reqBody.Timeout = 30
 	} else {
 		reqBody.Timeout, err = strconv.Atoi(reqTimeout)
 		if err != nil {
