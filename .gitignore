@@ -1,6 +1,7 @@
 share/store/*.gob
 vendor
 dist/**
+share/etc/**
 !*.gitkeep
-share/etc/development.yaml
-share/etc/production.yaml
+!share/etc/development.example.yaml
+!share/etc/production.example.yaml

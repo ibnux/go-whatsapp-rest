@@ -203,12 +203,12 @@ func WASessionConnect(jid string, versionClientMajor int, versionClientMinor int
 
 func WASessionLogin(jid string, versionClientMajor int, versionClientMinor int, versionClientBuild int, timeout int, file string, qrstr chan<- string) error {
 	if wac[jid] != nil {
-		if WASessionExist(file) {
-			err := os.Remove(file)
-			if err != nil {
-				return err
-			}
-		}
+		// if WASessionExist(file) {
+		// 	err := os.Remove(file)
+		// 	if err != nil {
+		// 		return err
+		// 	}
+		// }
 
 		delete(wac, jid)
 	}
@@ -242,12 +242,12 @@ func WASessionLogin(jid string, versionClientMajor int, versionClientMinor int, 
 
 func WASessionRestore(jid string, versionClientMajor int, versionClientMinor int, versionClientBuild int, timeout int, file string, sess whatsapp.Session) error {
 	if wac[jid] != nil {
-		if WASessionExist(file) {
-			err := os.Remove(file)
-			if err != nil {
-				return err
-			}
-		}
+		// if WASessionExist(file) {
+		// 	err := os.Remove(file)
+		// 	if err != nil {
+		// 		return err
+		// 	}
+		// }
 
 		delete(wac, jid)
 	}

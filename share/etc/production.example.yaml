@@ -1,11 +1,11 @@
 ## Server Configuration
 SERVER_NAME: "go-whatsapp-rest"
-SERVER_IP: "127.0.0.1"
+SERVER_IP: "0.0.0.0"
 SERVER_PORT: "3000"
-SERVER_STORE_PATH: "/home/ibnuxweb/go-whatsapp-rest/share/store"
-SERVER_UPLOAD_PATH: "/home/ibnuxweb/go-whatsapp-rest/share/upload"
+SERVER_STORE_PATH: "./share/store"
+SERVER_UPLOAD_PATH: "./share/upload"
 SERVER_UPLOAD_LIMIT: 8
-SERVER_LOG_LEVEL: "debug"
+SERVER_LOG_LEVEL: "info"
 
 ## Router Configuration
 ROUTER_BASE_PATH: "/wa"
