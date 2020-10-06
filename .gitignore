@@ -5,3 +5,4 @@ share/etc/**
 !*.gitkeep
 !share/etc/development.example.yaml
 !share/etc/production.example.yaml
+go-whatsapp
