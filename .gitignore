@@ -4,3 +4,6 @@ config/stores/*
 config/uploads/*
 *.DS_Store
 !*.gitkeep
+config/development.yaml
+config/production.yaml
+go-whatsapp
