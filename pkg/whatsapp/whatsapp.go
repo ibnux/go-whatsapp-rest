@@ -148,7 +148,7 @@ func WASessionInit(jid string, versionClientMajor int, versionClientMinor int, v
 		if err != nil {
 			return err
 		}
-		conn.SetClientName("Mac OS", "My Browser", "1.0")
+		conn.SetClientName("Go WhatsApp REST", "Go WhatsApp", "1.0")
 
 		info, err := WASyncVersion(conn, versionClientMajor, versionClientMinor, versionClientBuild)
 		if err != nil {
@@ -255,12 +255,12 @@ func WASessionConnect(jid string, versionClientMajor int, versionClientMinor int
 
 func WASessionLogin(jid string, versionClientMajor int, versionClientMinor int, versionClientBuild int, timeout int, file string, qrstr chan<- string) error {
 	if wac[jid] != nil {
-		// if WASessionExist(file) {
-		// 	err := os.Remove(file)
-		// 	if err != nil {
-		// 		return err
-		// 	}
-		// }
+		if WASessionExist(file) {
+			err := os.Remove(file)
+			if err != nil {
+				return err
+			}
+		}
 
 		delete(wac, jid)
 	}
@@ -294,12 +294,12 @@ func WASessionLogin(jid string, versionClientMajor int, versionClientMinor int, 
 
 func WASessionRestore(jid string, versionClientMajor int, versionClientMinor int, versionClientBuild int, timeout int, file string, sess whatsapp.Session) error {
 	if wac[jid] != nil {
-		// if WASessionExist(file) {
-		// 	err := os.Remove(file)
-		// 	if err != nil {
-		// 		return err
-		// 	}
-		// }
+		if WASessionExist(file) {
+			err := os.Remove(file)
+			if err != nil {
+				return err
+			}
+		}
 
 		delete(wac, jid)
 	}
@@ -403,7 +403,7 @@ func WAMessageText(jid string, jidDest string, msgText string, msgQuotedID strin
 		case "sending message timed out":
 			return id, nil
 		case "could not send proto: failed to write message: error writing to websocket: websocket: close sent":
-			//delete(wac, jid)
+			delete(wac, jid)
 			return "", errors.New("connection is invalid")
 		default:
 			return "", err
