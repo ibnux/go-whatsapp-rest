@@ -1,1 +1,1 @@
-go build -a -o go-whatsapp cmd/main/main.go
+go build -a -o dist/go-whatsapp *.go
