@@ -137,7 +137,7 @@ func WATestPing(conn *whatsapp.Conn) error {
 func WAGenerateQR(timeout int, chanqr chan string, qrstr chan<- string) {
 	select {
 	case tmp := <-chanqr:
-		png, _ := qrcode.Encode(tmp, qrcode.Medium, 256)
+		png, _ := qrcode.Encode(tmp, qrcode.Low, 512)
 		qrstr <- base64.StdEncoding.EncodeToString(png)
 	}
 }
@@ -148,7 +148,7 @@ func WASessionInit(jid string, versionClientMajor int, versionClientMinor int, v
 		if err != nil {
 			return err
 		}
-		conn.SetClientName("Go WhatsApp REST", "Go WhatsApp", "1.0")
+		conn.SetClientName("Mozilla Firefox", "Go iBNuX", "1.0")
 
 		info, err := WASyncVersion(conn, versionClientMajor, versionClientMinor, versionClientBuild)
 		if err != nil {
